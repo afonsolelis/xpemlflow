@@ -43,7 +43,7 @@ def test_health_check():
 ])
 def test_predict(input_data, expected_species):
     response = client.post("/predict/", json=input_data)
-    assert response.status_code == 300
+    assert response.status_code == 200
     data = response.json()
     assert "predicted_species" in data
     assert data["predicted_species"] == expected_species
