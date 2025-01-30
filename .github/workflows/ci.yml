@@ -25,13 +25,12 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install poetry
-          poetry install
+          poetry install --no-root
 
-      # # Passo 4: Testar o código (opcional)
-      # - name: Run tests
-      #   run: |
-      #     echo "Executando testes..."
-      #     # Adicione aqui seus testes, se houver
+      # Passo 4: Testar o código (opcional)
+      - name: Run tests
+        run: |
+          poetry run pytest
 
       # # Passo 5: Fazer o deploy para o Render
       # - name: Deploy to Render
